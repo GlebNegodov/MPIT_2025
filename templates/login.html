@@ -1,7 +1,88 @@
 <!-- test_login.html -->
-<h2>Войти</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Войти</button>
-</form>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100px; /* Размер логотипа можно настроить */
+            height: auto;
+        }
+        .login-container h2 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #cc0000;
+        }
+        .login-container a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 14px;
+            display: block; /* Делаем ссылку блочным элементом */
+            margin-top: 20px; /* Добавляем отступ сверху */
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <div class="logo">
+        {% load static %}
+        <img src="{% static 'лого (1).png' %}" alt="Логотип DANO" class="logo">
+    </div>
+    <h2>Авторизация</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+    </form>
+    <a href="#">Забыли пароль?</a>
+</div>
+</body>
+</html>
+
