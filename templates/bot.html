@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Иванов Иван</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin-top: -42px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #777;
+            margin: 0 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #777;
+        }
+        .menu a[href="/bot"]:nth-child(2) {
+            color: red;
+        }
+        .menu a[href="/bot"]:nth-child(2)::after {
+            background-color: red;
+        }
+
+        /* Стили для блока с информацией о Telegram */
+        .telegram-info {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .telegram-info h2 {
+            font-size: 24px;
+            color: red; /* Красный цвет для заголовка */
+            margin-bottom: 20px;
+        }
+        .telegram-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .telegram-info a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0088cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .telegram-info a:hover {
+            background-color: #006699;
+        }
+
+        /* Стиль для кнопки "Поиск" (теперь с красным цветом) */
+        .top-buttons a[href="/search"]:nth-child(1) {
+            border-color: red;
+            color: red;
+        }
+        .top-buttons a[href="/search"]:nth-child(1):hover {
+            background-color: red;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        {% load static %}
+        <img src="{% static 'лого (1).png' %}" alt="Логотип DANO" class="logo">
+        <div class="top-buttons">
+            <a href="/search">Поиск</a>
+            <a href="/index">Личный кабинет</a>
+            <a href="/logout">Выйти</a>
+        </div>
+    </header>
+    <nav class="menu">
+        <a href="/companies">Компании</a>
+        <a href="/bot">Бот</a>
+        <a href="/events">События</a>
+        <a href="/community">Сообщество</a>
+    </nav><!-- Блок с информацией о Telegram -->
+    <div class="telegram-info">
+        <h2>Почему Telegram?</h2>
+        <p>
+            Telegram — это удобный и быстрый способ общения. После отклика на вакансию вы будете перенаправлены в наш
+            Telegram-бот, где сможете:
+        </p>
+        <ul style="text-align: left; display: inline-block; color: #555;">
+            <li>Отслеживать статус вашего отклика.</li>
+            <li>Получать уведомления о новых вакансиях.</li>
+            <li>Общаться с работодателем в удобном формате.</li>
+            <li>Получать оперативные ответы на ваши вопросы.</li>
+        </ul>
+        <p>
+            Все дальнейшие действия по вакансии вы сможете отслеживать прямо в Telegram. Это удобно, быстро и безопасно!
+        </p>
+        <a href="https://t.me/MPIT2025_bot" target="_blank">Перейти в Telegram-бот</a>
+    </div>
+</div>
+</body>
+</html>

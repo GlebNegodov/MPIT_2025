@@ -18,10 +18,22 @@ from django.urls import path
 from app1.views import index_page
 from app1.views import login_view
 from app1.views import logout_view
+from app1.views import achievements
+from app1.views import search
+from app1.views import companies
+from app1.views import events
+from app1.views import bot
+from app1.views import community
 
 urlpatterns = [
     path('', login_view),
     path('index/', index_page),
     path('logout/', logout_view),
     path('admin/', admin.site.urls),
+    path('achievements/', achievements),
+    path('search/', search),
+    path('companies/', companies),
+    path('events/', events),
+    path('bot/', bot),
+    path('community/', community)
 ]

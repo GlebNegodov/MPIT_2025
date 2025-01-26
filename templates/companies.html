@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Иванов Иван</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #777;
+            margin: 0 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #777;
+        }
+        .menu a[href="/companies"]:nth-child(1) {
+            color: red;
+        }
+        .menu a[href="/companies"]:nth-child(1)::after {
+            background-color: red;
+        }
+        .top-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .top-buttons a[href="/search"]:nth-child(1) {
+            border-color: red;
+            color: red;
+        }
+        .top-buttons a[href="/search"]:nth-child(1):hover {
+            background-color: red;
+            color: #fff;
+        }
+        .top-buttons a[href="/index"]:nth-child(2) {
+            border-color: #007BFF;
+            color: #007BFF;
+        }
+        .top-buttons a[href="/index"]:nth-child(2):hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .job-listings {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .job-listing {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .job-listing h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .job-listing p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .job-listing .company {
+            color: red;
+            font-weight: bold;
+        }
+        .job-listing .location {
+            font-style: italic;
+        }
+        .job-listing .apply-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .job-listing .apply-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+                {% load static %}
+        <img src="{% static 'лого (1).png' %}" alt="Логотип DANO" class="logo">
+        <div class="top-buttons">
+            <a href="/search">Поиск</a>
+            <a href="/index">Личный кабинет</a>
+            <a href='/logout'>Выйти</a>
+        </div>
+    </header>
+    <nav class="menu">
+        <a href="/companies">Компании</a>
+        <a href="/bot">Бот</a>
+        <a href="/events">События</a>
+        <a href="/community">Сообщество</a>
+    </nav>
+    <div class="job-listings">
+        <div class="job-listing">
+            <h2>Стажер-разработчик</h2>
+            <p>Без опыта</p>
+            <p>Можно удалённо</p>
+            <p class="company">ПАО Ростелеком</p>
+            <p class="location">Нижний Новгород</p>
+            <a href="#" class="apply-button">Откликнуться</a>
+        </div>
+        <div class="job-listing">
+            <h2>Аналитик данных</h2>
+            <p>Без опыта</p>
+            <p>Можно удалённо</p>
+            <p class="company">Яндекс</p>
+            <p class="location">Москва</p>
+            <a href="#" class="apply-button">Откликнуться</a>
+        </div>
+        <div class="job-listing">
+            <h2>Frontend-разработчик</h2>
+            <p>Без опыта</p>
+            <p>Можно удалённо</p>
+            <p class="company">Сбер</p>
+            <p class="location">Санкт-Петербург</p>
+            <a href="#" class="apply-button">Откликнуться</a>
+        </div>
+        <div class="job-listing">
+            <h2>Менеджер проектов</h2>
+            <p>Без опыта</p>
+            <p>Можно удалённо</p>
+            <p class="company">Т-Банк</p>
+            <p class="location">Казань</p>
+            <a href="#" class="apply-button">Откликнуться</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

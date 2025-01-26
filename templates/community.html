@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Иванов Иван</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin-top: -24px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 100px;
+            margin-bottom: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 20px;
+            font-size: 18px;
+            position: relative;
+            padding-bottom: 5px; /* Отступ для подчёркивания */
+        }
+        .menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #333; /* Цвет подчёркивания по умолчанию */
+        }
+        /* Стиль для "Сообщество" (красный цвет и подчёркивание) */
+        .menu a[href="/community"]:nth-child(4) {
+            color: red;
+        }
+        .menu a[href="/community"]:nth-child(4)::after {
+            background-color: red; /* Красное подчёркивание */
+        }
+
+        /* Стили для блока контента */
+        .welcome-content {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-content h1 {
+            font-size: 28px;
+            color: red; /* Красный цвет для заголовка */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .welcome-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .welcome-content ul {
+            list-style-type: disc;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+        .welcome-content ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .welcome-content .highlight {
+            font-weight: bold;
+            color: red; /* Красный цвет для лозунга */
+            text-align: center;
+            margin-top: 20px;
+        }
+        .welcome-content .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .welcome-content .link a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .welcome-content .link a:hover {
+            color: red;
+        }/* Стили для кнопок в шапке */
+        .top-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        /* Стиль для кнопки "Поиск" (теперь с красным цветом) */
+        .top-buttons a[href="/search"]:nth-child(1) {
+            border-color: red;
+            color: red;
+        }
+        .top-buttons a[href="/search"]:nth-child(1):hover {
+            background-color: red;
+            color: #fff;
+        }
+        /* Стиль для кнопки "Личный кабинет" (теперь с синим цветом) */
+        .top-buttons a[href="/index"]:nth-child(2) {
+            border-color: #007BFF;
+            color: #007BFF;
+        }
+        .top-buttons a[href="/index"]:nth-child(2):hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        {% load static %}
+        <img src="{% static 'лого (1).png' %}" alt="Логотип DANO" class="logo">        <div class="top-buttons">
+            <a href="/search">Поиск</a>
+            <a href="/index">Личный кабинет</a>
+            <a href="/logout">Выйти</a>
+        </div>
+    </header>
+    <nav class="menu">
+        <a href="/companies">Компании</a>
+        <a href="/bot">Бот</a>
+        <a href="/events">События</a>
+        <a href="/community">Сообщество</a>
+    </nav>
+    <main>
+        <section class="welcome-content">
+            <h1>Добро пожаловать в наше сообщество профессионалов!</h1>
+            <p>
+                Это место, где собрались те, кто уже нашел свой путь в карьере и готов делиться опытом, советами и
+                вдохновением. Здесь вы сможете:
+            </p>
+            <ul>
+                <li>Получить ценные рекомендации от опытных коллег.</li>
+                <li>Найти наставников, которые помогут вам расти.</li>
+                <li>Узнать, как строить карьеру и избегать типичных ошибок.</li>
+            </ul>
+            <p>
+                Если вы хотите быть в окружении тех, кто уже добился успеха, и перенимать их знания, это сообщество для
+                вас! Присоединяйтесь, задавайте вопросы, делитесь своими историями и стройте свою карьеру вместе с нами.
+            </p>
+            <p class="highlight">Вместе мы можем больше!</p>
+            <div class="link">
+                <a href="https://t.me/jobseekers_hh_ru" target="_blank">Присоединиться к нашему Telegram-каналу</a>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

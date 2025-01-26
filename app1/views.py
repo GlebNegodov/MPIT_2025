@@ -65,7 +65,7 @@ def index_page(request):
 
     # x.write(string)
 
-    return render(request, 'index.html', context=data)
+    return render(request, 'test_index.html', context=data)
 
 
 def login_view(request):
@@ -102,3 +102,27 @@ def login_view(request):
 
 def logout_view(request):
     return redirect(login_view)
+
+
+def achievements(request):
+    return render(request, 'profile.html')
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def companies(request):
+    return render(request, 'companies.html')
+
+
+def events(request):
+    return render(request, 'events.html')
+
+
+def bot(request):
+    return render(request, 'bot.html')
+
+
+def community(request):
+    return render(request, 'community.html')
