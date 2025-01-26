@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+    </style>
+</head>
+<body>
+<div>
+    <a href='/'>Login</a>
+    <a href='/logout'>Logout</a>
+</div>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Profile')">Профиль</button>
+    <button class="tablinks" onclick="openCity(event, 'Medal')">Достижения</button>
+    <button class="tablinks" onclick="openCity(event, 'Date')">Расписание</button>
+    <button class="tablinks" onclick="openCity(event, 'Company')">Компании</button>
+    <button class="tablinks" onclick="openCity(event, 'Bot')">Бот</button>
+    <button class="tablinks" onclick="openCity(event, 'People')">Сообщество</button>
+</div>
+
+<div id="Profile" class="tabcontent">
+    <table>
+        <tr>
+            <th><h3>Профиль</h3></th>
+            <th><h3>Новые данные</h3></th>
+        </tr>
+        <tr>
+            <td>
+                <p>Имя: {{name}}</p>
+
+                <p>Фамилия: {{second_name}}</p>
+
+                <p>Отчество: {{third_name}}</p>
+
+                <p>Пол: {{genders}}</p>
+
+                <p>День рождение: {{bithday}} </p>
+
+                <p>Телефон: {{number}}</p>
+
+                <p>Почта: {{email}} </p>
+
+                <p>Будущая профессия: {{professia}} </p>
+                <p>Образование: {{obrazovaniy}}</p>
+            </td>
+            <td>df</td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+<div id="Medal" class="tabcontent">
+    <h3>Достижения</h3>
+    <table>
+        <tr>
+            <th>Соревнования</th>
+            <th>Результат</th>
+            <th>Победителей</th>
+            <th>Кол-во участников</th>
+        </tr>
+        <ul>
+            {% for lan in dostyshenia %}
+            <tr>
+                {% for la in lan %}
+                <td>{{ la }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </ul>
+    </table>
+
+    </form>
+
+</div>
+
+<div id="Date" class="tabcontent">
+    <h3>Bot</h3>
+    <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<div id="Company" class="tabcontent">
+    <h3>Компании</h3>
+    <table>
+        <tr>
+            <th>Компания</th>
+            <th>Описание</th>
+            <th>Метка безопасности</th>
+        </tr>
+        <ul>
+            {% for lan in company %}
+            <tr>
+                {% for la in lan %}
+                <td>{{ la }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </ul>
+    </table>
+    </table>
+</div>
+
+<div id="Bot" class="tabcontent">
+    <h3>Бот</h3>
+    <a href="t.me/MPIT2025_bot">t.me/MPIT2025_bot</a>
+</div>
+
+<div id="People" class="tabcontent">
+    <a href="https://t.me/employers_hh_ru">Сообщество Работодателей</a>
+    <br>
+    <a href="https://t.me/jobseekers_hh_ru">Сообщество Соискателей</a>
+</div>
+
+
+<p> Welcome to the Our site</p>
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+</script>
+
+</body>
+</html> 
+
+
+

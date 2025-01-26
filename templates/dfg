@@ -1,0 +1,38 @@
+#user = User.objects.create_user('user_1', 'myemail@crazymail.com', '1234')
+    # Обновите поля и сохраните их снова
+    #user.first_name = 'John'
+    #user.last_name = 'Citizen'
+    #user.save()
+    #new_worker = Worker(name='Иван', second_name='Загубинский', salary=2000)
+    #new_worker.save()
+    #worker_to_change = Worker.objects.get(id=3)
+    #print(worker_to_change)
+    #worker_to_change.second_name = 'dfg'
+    #worker_to_change.save()
+    #print(all_workers)
+    #workers_salary = Worker.objects.filter(salary=1)
+    #print(workers_salary)
+
+
+    <div id="Profile" class="tabcontent">
+  <table>
+    <tr><th><h3>Профиль</h3></th><th>Новые данные</th></tr>
+    <tr><td>
+  <p>Имя: {{name}}</p>    
+
+  <p>Фамилия: {{second_name}}</p>    
+ 
+  <p>Отчество: {{third_name}}</p>    
+ 
+  <p>Пол: {{genders}}</p>    
+    
+  <p>День рождение: {{bithday}} </p>   
+  
+  <p>Телефон: {{number}}</p>
+
+  <p>Почта: {{email}}  </p>  
+ 
+  <p>Будущая профессия: {{professia}}  </p>  
+  <p>Образование: {{obrazovaniy}}</p>  
+  </td><td>df</td></tr>
+</form>
